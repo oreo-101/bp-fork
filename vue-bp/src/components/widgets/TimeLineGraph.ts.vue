@@ -59,14 +59,12 @@ export default defineComponent({
     const mousemove = (e: MouseEvent) => {
       if (mouseIsDown && scrollBox.value) {
         const amountMoved = e.clientX - lastMouseX;
-        console.log(scrollBox.value.scrollLeft, e.clientX);
         scrollBox.value.scrollBy({ left: -amountMoved });
         lastMouseX = e.clientX;
       }
     };
-    const mouseup = (e: MouseEvent) => {
+    const mouseup = () => {
       mouseIsDown = false;
-      console.log(e);
     };
     return {
       mousedown,

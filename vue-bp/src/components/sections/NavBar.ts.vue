@@ -55,14 +55,12 @@ export default defineComponent({
       if (window.top?.scrollY > barElement.value.offsetHeight) {
         // become sticky
         if (!barElement.value.classList.contains("sticky")) {
-          console.log("adding");
           barElement.value.classList.add("sticky");
         }
       } else {
         // not sticky
         if (window.top.scrollY < 1) {
           if (barElement.value.classList.contains("sticky")) {
-            console.log("removing");
             barElement.value.classList.remove("sticky");
           }
         }
